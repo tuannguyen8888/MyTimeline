@@ -32,7 +32,28 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# data
-/data/timeline.json
+# Data files (chứa thông tin cá nhân)
+/data/
+data.json
+data.json.new
+facebook_events.json
+
+# Facebook export data
+/facebook-export/
+
+# Images (quá lớn để commit)
 /public/images/
+/imgs/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Old client-side files (deprecated)
+index.html
+styles.css
+script.js
 

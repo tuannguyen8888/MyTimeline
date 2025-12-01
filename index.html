@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Mối Quan Hệ - Hồ Sơ Bảo Lãnh Định Cư Mỹ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 Timeline Mối Quan Hệ</h1>
+            <p class="subtitle">Hồ sơ bảo lãnh vợ con định cư Mỹ</p>
+        </header>
+
+        <div class="main-content">
+            <div class="timeline-section">
+                <div class="timeline-header">
+                    <div>
+                        <h2>Timeline Mối Quan Hệ</h2>
+                        <div id="saveStatus" class="save-status"></div>
+                        <div id="eventCount" class="event-count"></div>
+                    </div>
+                    <div class="timeline-actions">
+                        <button id="addEventBtn" class="btn-primary">➕ Thêm Sự Kiện</button>
+                        <button id="exportJsonBtn" class="btn-secondary">💾 Lưu File</button>
+                        <button id="exportImagesBtn" class="btn-secondary">🖼️ Xuất Ảnh</button>
+                        <button id="importJsonBtn" class="btn-secondary">📂 Mở File</button>
+                        <input type="file" id="importFileInput" accept=".json" style="display: none;">
+                        <button id="exportBtn" class="btn-secondary">📄 Xuất PDF</button>
+                        <button id="printBtn" class="btn-secondary">🖨️ In</button>
+                        <button id="clearBtn" class="btn-danger">🗑️ Xóa Tất Cả</button>
+                    </div>
+                </div>
+
+                <div id="timelineContainer" class="timeline-container">
+                    <p class="empty-message">Chưa có sự kiện nào. Hãy thêm sự kiện đầu tiên của bạn!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Form Thêm Sự Kiện -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>➕ Thêm Sự Kiện Mới</h2>
+                <button class="modal-close" onclick="closeEventModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="timelineForm">
+                    <div class="form-group">
+                        <label for="eventDate">Ngày tháng:</label>
+                        <input type="text" id="eventDate" placeholder="DD/MM/YYYY hoặc MM/YYYY hoặc YYYY" required>
+                        <small class="form-hint">Ví dụ: 15/03/2020 hoặc 03/2020 hoặc 2020</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventType">Loại sự kiện:</label>
+                        <select id="eventType" required>
+                            <option value="">-- Chọn loại sự kiện --</option>
+                            <option value="first-meet">Lần đầu gặp mặt</option>
+                            <option value="dating">Bắt đầu hẹn hò</option>
+                            <option value="engagement">Đính hôn</option>
+                            <option value="wedding">Kết hôn</option>
+                            <option value="honeymoon">Tuần trăng mật</option>
+                            <option value="pregnancy">Mang thai</option>
+                            <option value="birth">Sinh con</option>
+                            <option value="anniversary">Kỷ niệm</option>
+                            <option value="travel">Du lịch cùng nhau</option>
+                            <option value="family-event">Sự kiện gia đình</option>
+                            <option value="document">Giấy tờ pháp lý</option>
+                            <option value="other">Khác</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventTitle">Tiêu đề sự kiện:</label>
+                        <input type="text" id="eventTitle" placeholder="Ví dụ: Lần đầu gặp mặt tại..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventDescription">Mô tả chi tiết:</label>
+                        <textarea id="eventDescription" rows="4" placeholder="Mô tả chi tiết về sự kiện, địa điểm, người tham gia, cảm xúc..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventLocation">Địa điểm:</label>
+                        <input type="text" id="eventLocation" placeholder="Ví dụ: Hà Nội, Việt Nam">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventWitnesses">Người chứng kiến/Người tham gia:</label>
+                        <input type="text" id="eventWitnesses" placeholder="Ví dụ: Gia đình, bạn bè...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventDocuments">Tài liệu đính kèm (nếu có):</label>
+                        <input type="text" id="eventDocuments" placeholder="Ví dụ: Giấy đăng ký kết hôn, ảnh, vé máy bay...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventImages">Hình ảnh (có thể chọn nhiều):</label>
+                        <input type="file" id="eventImages" accept="image/*" multiple>
+                        <div id="imagePreview" class="image-preview-container"></div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn-secondary" onclick="closeEventModal()">Hủy</button>
+                        <button type="submit" class="btn-primary">Thêm Sự Kiện</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

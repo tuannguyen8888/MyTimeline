@@ -31,11 +31,20 @@ jobs:
       - name: Copy public files to deployment directory
         run: |
           mkdir -p _site
+          # Copy tất cả file từ public/ vào _site/
           cp -r public/* _site/
-          # Copy data folder if exists
-          if [ -d "public/data" ]; then
-            cp -r public/data _site/
+          # Đảm bảo index.html ở root của _site
+          if [ -f "public/index.html" ]; then
+            cp public/index.html _site/index.html
           fi
+          # Copy data folder nếu có
+          if [ -d "public/data" ]; then
+            mkdir -p _site/data
+            cp -r public/data/* _site/data/
+          fi
+          # List files để debug
+          echo "Files in _site:"
+          ls -la _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

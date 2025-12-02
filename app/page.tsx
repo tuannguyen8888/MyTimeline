@@ -826,17 +826,26 @@ export default function Home() {
     imageId: number,
     imagePath: string
   ) => {
+    console.log('handleDeleteExistingImage called:', { imageId, imagePath });
+
     if (
       !confirm(
         'Bạn có chắc chắn muốn xóa ảnh này?\n\nẢnh sẽ bị xóa vĩnh viễn khỏi sự kiện và thư mục.'
       )
     ) {
+      console.log('User cancelled deletion');
       return;
     }
 
     try {
+      setSaveStatus({
+        message: 'Đang xóa ảnh...',
+        type: 'info',
+      });
+
       // Xóa file ảnh từ server
       if (imagePath) {
+        console.log('Deleting image from server:', imagePath);
         const response = await fetch(
           `/api/delete-image?path=${encodeURIComponent(imagePath)}`,
           {
@@ -844,14 +853,29 @@ export default function Home() {
           }
         );
         const result = await response.json();
+        console.log('Delete API response:', result);
+
         if (!result.success) {
           console.error('Error deleting image file:', result.error);
+          setSaveStatus({
+            message: result.error || 'Không thể xóa file ảnh từ server',
+            type: 'error',
+          });
+          setTimeout(() => setSaveStatus(null), 3000);
           // Vẫn tiếp tục xóa khỏi danh sách dù file không xóa được
         }
       }
 
       // Xóa ảnh khỏi danh sách existingImages (chỉ trong popup edit)
-      setExistingImages((prev) => prev.filter((img) => img.id !== imageId));
+      setExistingImages((prev) => {
+        const filtered = prev.filter((img) => img.id !== imageId);
+        console.log(
+          'Updated existingImages:',
+          filtered.length,
+          'images remaining'
+        );
+        return filtered;
+      });
 
       // Nếu đang edit sự kiện, cập nhật luôn trong editingEvent
       if (editingEvent) {
@@ -859,14 +883,23 @@ export default function Home() {
           ...editingEvent,
           images: editingEvent.images.filter((img) => img.id !== imageId),
         });
+        console.log('Updated editingEvent images');
       }
+
+      setSaveStatus({
+        message: 'Đã xóa ảnh thành công',
+        type: 'success',
+      });
+      setTimeout(() => setSaveStatus(null), 3000);
     } catch (error) {
       console.error('Error deleting image:', error);
       setSaveStatus({
-        message: 'Lỗi khi xóa ảnh',
+        message: `Lỗi khi xóa ảnh: ${
+          error instanceof Error ? error.message : 'Unknown error'
+        }`,
         type: 'error',
       });
-      setTimeout(() => setSaveStatus(null), 3000);
+      setTimeout(() => setSaveStatus(null), 5000);
     }
   };
 
@@ -1247,9 +1280,16 @@ export default function Home() {
                           <button
                             type='button'
                             className='remove-image'
-                            onClick={() =>
-                              handleDeleteExistingImage(img.id, img.path || '')
-                            }
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              console.log(
+                                'Delete button clicked for image:',
+                                img.id,
+                                img.path
+                              );
+                              handleDeleteExistingImage(img.id, img.path || '');
+                            }}
                             title='Xóa ảnh (sẽ xóa file khỏi thư mục)'
                           >
                             ×

@@ -33,31 +33,53 @@ jobs:
           # Tạo thư mục _site
           mkdir -p _site
           
-          # Copy tất cả file từ public/ vào _site/
-          # Sử dụng find để tránh vấn đề với hidden files
-          find public -mindepth 1 -maxdepth 1 ! -name '.git' -exec cp -r {} _site/ \;
+          # Kiểm tra file có tồn tại không
+          echo "=== Checking public/ directory ==="
+          ls -la public/ || echo "public/ directory not found"
           
-          # Đảm bảo index.html tồn tại ở root của _site
-          if [ ! -f "_site/index.html" ]; then
-            echo "ERROR: index.html not found in _site!"
-            echo "Contents of _site:"
-            ls -la _site/
+          # Copy từng file một cách rõ ràng
+          if [ -f "public/index.html" ]; then
+            cp public/index.html _site/index.html
+            echo "✓ Copied index.html"
+          else
+            echo "ERROR: public/index.html not found!"
             exit 1
           fi
           
-          # Đảm bảo script.js và styles.css có sẵn
-          if [ ! -f "_site/script.js" ]; then
-            echo "WARNING: script.js not found!"
-          fi
-          if [ ! -f "_site/styles.css" ]; then
-            echo "WARNING: styles.css not found!"
+          if [ -f "public/script.js" ]; then
+            cp public/script.js _site/script.js
+            echo "✓ Copied script.js"
           fi
           
-          # List files để debug
+          if [ -f "public/styles.css" ]; then
+            cp public/styles.css _site/styles.css
+            echo "✓ Copied styles.css"
+          fi
+          
+          # Copy data folder nếu có
+          if [ -d "public/data" ]; then
+            mkdir -p _site/data
+            cp -r public/data/* _site/data/
+            echo "✓ Copied data folder"
+          fi
+          
+          # Copy images folder nếu có (chỉ structure, không copy toàn bộ ảnh)
+          if [ -d "public/images" ]; then
+            mkdir -p _site/images
+            echo "✓ Created images directory"
+          fi
+          
+          # Verify files
           echo "=== Files in _site ==="
           ls -la _site/
-          echo "=== Checking index.html ==="
-          head -5 _site/index.html
+          echo "=== Verifying index.html ==="
+          if [ -f "_site/index.html" ]; then
+            head -5 _site/index.html
+            echo "✓ index.html exists and is valid"
+          else
+            echo "ERROR: index.html not found in _site!"
+            exit 1
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -30,19 +30,29 @@ jobs:
 
       - name: Copy public files to deployment directory
         run: |
+          # Tạo thư mục _site
           mkdir -p _site
-          # Copy tất cả file từ public/ vào _site/ (bao gồm index.html, script.js, styles.css)
-          cp -r public/* _site/ 2>/dev/null || true
-          # Copy data folder nếu có
-          if [ -d "public/data" ]; then
-            mkdir -p _site/data
-            cp -r public/data/* _site/data/ 2>/dev/null || true
-          fi
-          # Đảm bảo index.html tồn tại ở root
+          
+          # Copy tất cả file từ public/ vào _site/
+          # Sử dụng find để tránh vấn đề với hidden files
+          find public -mindepth 1 -maxdepth 1 ! -name '.git' -exec cp -r {} _site/ \;
+          
+          # Đảm bảo index.html tồn tại ở root của _site
           if [ ! -f "_site/index.html" ]; then
-            echo "ERROR: index.html not found!"
+            echo "ERROR: index.html not found in _site!"
+            echo "Contents of _site:"
+            ls -la _site/
             exit 1
           fi
+          
+          # Đảm bảo script.js và styles.css có sẵn
+          if [ ! -f "_site/script.js" ]; then
+            echo "WARNING: script.js not found!"
+          fi
+          if [ ! -f "_site/styles.css" ]; then
+            echo "WARNING: styles.css not found!"
+          fi
+          
           # List files để debug
           echo "=== Files in _site ==="
           ls -la _site/

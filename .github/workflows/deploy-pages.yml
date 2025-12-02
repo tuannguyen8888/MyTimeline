@@ -79,6 +79,19 @@ jobs:
             echo "WARNING: public/data directory not found!"
           fi
           
+          # Copy images folder nếu có
+          if [ -d "public/images" ]; then
+            mkdir -p _site/images
+            cp -r public/images/* _site/images/ 2>/dev/null || true
+            echo "✓ Copied images folder"
+            echo "Images directory structure:"
+            find _site/images -type d | head -10
+            echo "Number of image files:"
+            find _site/images -type f | wc -l
+          else
+            echo "WARNING: public/images directory not found!"
+          fi
+          
           # Verify files
           echo "=== Final files in _site ==="
           ls -la _site/

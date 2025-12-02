@@ -42,7 +42,7 @@ facebook_events.json
 /facebook-export/
 
 # Images (quá lớn để commit)
-/public/images/
+# /public/images/  # Đã bỏ ignore để deploy lên GitHub Pages
 /imgs/
 
 # Python cache

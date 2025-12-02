@@ -587,7 +587,16 @@ function createEventElement(event) {
                             // Path format: images/{YYYY-MM-DD}-{type}/{filename}
                             const pathParts = img.path.split('/');
                             const relativePath = pathParts.slice(-2).join('/'); // Lấy 2 phần cuối
-                            imageUrl = isFileProtocol ? `./images/${relativePath}` : `/images/${relativePath}`;
+                            // Xác định base path cho GitHub Pages
+                            const currentPath = window.location.pathname;
+                            const basePath = currentPath.replace(/\/index\.html$/, '').replace(/\/$/, '') || '';
+                            if (isFileProtocol) {
+                                imageUrl = `./images/${relativePath}`;
+                            } else if (basePath && basePath !== '/') {
+                                imageUrl = `${basePath}/images/${relativePath}`;
+                            } else {
+                                imageUrl = `/images/${relativePath}`;
+                            }
                         } else if (img.data) {
                             // Base64 data
                             imageUrl = img.data;
@@ -964,7 +973,16 @@ async function downloadEventImages(eventId) {
                 // Path format: images/{YYYY-MM-DD}-{type}/{filename}
                 const pathParts = img.path.split('/');
                 const relativePath = pathParts.slice(-2).join('/');
-                imageUrl = isFileProtocol ? `./images/${relativePath}` : `/images/${relativePath}`;
+                // Xác định base path cho GitHub Pages
+                const currentPath = window.location.pathname;
+                const basePath = currentPath.replace(/\/index\.html$/, '').replace(/\/$/, '') || '';
+                if (isFileProtocol) {
+                    imageUrl = `./images/${relativePath}`;
+                } else if (basePath && basePath !== '/') {
+                    imageUrl = `${basePath}/images/${relativePath}`;
+                } else {
+                    imageUrl = `/images/${relativePath}`;
+                }
             } else if (img.data) {
                 // Base64 data
                 imageUrl = img.data;

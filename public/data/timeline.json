@@ -344,7 +344,7 @@
         "format": "DD/MM/YYYY"
       },
       "type": "family-event",
-      "title": "Ba me và em trai đi Mỹ định cư",
+      "title": "Ba, Mẹ và em trai đi Mỹ định cư",
       "description": "Cô ấy cùng tôi, em gái và nhiều người thân đưa tiễn ba, mẹ và em trai đi Mỹ định cư",
       "location": "Sân bay quốc tế Tân Sơn Nhất",
       "witnesses": "Gia đình tôi",
@@ -875,8 +875,17 @@
         "day": 4,
         "format": "DD/MM/YYYY"
       },
+      "endDate": "07/03/2017",
+      "endDateParsed": {
+        "original": "07/03/2017",
+        "date": "2017-03-07T05:00:00.000Z",
+        "year": 2017,
+        "month": 3,
+        "day": 7,
+        "format": "DD/MM/YYYY"
+      },
       "type": "travel",
-      "title": "Đi chơi ở TP. Đà Nẵng",
+      "title": "Đi chơi ở TP. Đà Nẵng, 3 ngày",
       "description": "Tôi và cô ấy đi chơi ở Đà Nẵng, ngắm biển, ăn hải sản",
       "location": "TP. Đà Nẵng",
       "witnesses": "",
@@ -919,9 +928,18 @@
         "day": 4,
         "format": "DD/MM/YYYY"
       },
+      "endDate": "06/04/2017",
+      "endDateParsed": {
+        "original": "06/04/2017",
+        "date": "2017-04-06T04:00:00.000Z",
+        "year": 2017,
+        "month": 4,
+        "day": 6,
+        "format": "DD/MM/YYYY"
+      },
       "type": "travel",
-      "title": "Phú Quốc thẳng tiến :D",
-      "description": "Tôi và cô ấy cùng đi du lịch ở Phú Quốc",
+      "title": "Phú Quốc thẳng tiến :D, 3 ngày",
+      "description": "Tôi và cô ấy cùng đi du lịch ở Phú Quốc, đi chơi riêng trước khi hội họp và đi chơi chung với đồng nghiệp",
       "location": "Phú Quốc, Kiên Giang",
       "witnesses": "",
       "documents": "Ảnh chụp chung",
@@ -961,7 +979,7 @@
         "format": "DD/MM/YYYY"
       },
       "type": "travel",
-      "title": "Cắm trại và đi chơi ở Phú Quốc",
+      "title": "Cắm trại và đi chơi ở Phú Quốc, 2 ngày",
       "description": "Tôi và cô ấy hội họp với đồng nghiệp của tôi ở Phú Quốc. Sau đó chúng tôi cùng cắm trại và đi chơi các địa điểm ở Phú Quốc",
       "location": "Phú Quốc, Kiên Giang",
       "witnesses": "Bạn và đồng nghiệp của tôi",
@@ -1367,8 +1385,17 @@
         "day": 17,
         "format": "DD/MM/YYYY"
       },
+      "endDate": "19/11/2017",
+      "endDateParsed": {
+        "original": "19/11/2017",
+        "date": "2017-11-19T05:00:00.000Z",
+        "year": 2017,
+        "month": 11,
+        "day": 19,
+        "format": "DD/MM/YYYY"
+      },
       "type": "other",
-      "title": "Du lịch Đà Lạt",
+      "title": "Du lịch Đà Lạt, 3 ngày",
       "description": "Tôi, cô ấy, em gái tôi và bạn trai của em gái (hiện tại đã là chồng) cùng nhau đi du lịch ở Đà Lạt",
       "location": "Đà Lạt, Lâm Đồng",
       "witnesses": "Em gái tôi, bạn trai của em gái (hiện tại đã là chồng)",
@@ -1430,7 +1457,7 @@
         "format": "DD/MM/YYYY"
       },
       "type": "travel",
-      "title": "Đi chơi ở Vũng Tàu",
+      "title": "Đi chơi ở Vũng Tàu, 1 ngày",
       "description": "Một chuyến đi chơi lãng mạn của tôi cùng cô ấy ",
       "location": "TP. Vũng Tàu",
       "witnesses": "",
@@ -1982,7 +2009,7 @@
         "format": "DD/MM/YYYY"
       },
       "type": "other",
-      "title": "Mini trip cùng những người bạn và đồng nghiệp trong công ty tôi làm",
+      "title": "Mini trip cùng những người bạn và đồng nghiệp trong công ty tôi làm, 1 ngày",
       "description": "Cô ấy cùng tôi đi mini trip",
       "location": "TP. Hồ Chí Minh",
       "witnesses": "Bạn & đồng nghiệp của tôi",
@@ -2253,7 +2280,7 @@
         "format": "DD/MM/YYYY"
       },
       "type": "anniversary",
-      "title": "Đi chơi ở khu du lịch Đại Nam",
+      "title": "Đi chơi ở khu du lịch Đại Nam, 1 ngày",
       "description": "",
       "location": "",
       "witnesses": "",
@@ -2279,8 +2306,17 @@
         "day": 21,
         "format": "DD/MM/YYYY"
       },
+      "endDate": "26/03/2019",
+      "endDateParsed": {
+        "original": "26/03/2019",
+        "date": "2019-03-26T04:00:00.000Z",
+        "year": 2019,
+        "month": 3,
+        "day": 26,
+        "format": "DD/MM/YYYY"
+      },
       "type": "travel",
-      "title": "Đi du lịch ở Sapa",
+      "title": "Đi du lịch ở Sapa, 5 ngày",
       "description": "Tôi, cô ấy, cùng những anh em bà con đồng trang lứa đi du lịch ở Sapa",
       "location": "Sapa, Lào Cai",
       "witnesses": "Họ hàng của tôi",
@@ -2353,17 +2389,17 @@
         "day": 16,
         "format": "DD/MM/YYYY"
       },
-      "endDate": "18/01/2020",
+      "endDate": "22/01/2020",
       "endDateParsed": {
-        "original": "18/01/2020",
-        "date": "2020-01-18T05:00:00.000Z",
+        "original": "22/01/2020",
+        "date": "2020-01-22T05:00:00.000Z",
         "year": 2020,
         "month": 1,
-        "day": 18,
+        "day": 22,
         "format": "DD/MM/YYYY"
       },
       "type": "honeymoon",
-      "title": "Du lịch ở Thái Lan",
+      "title": "Du lịch ở Thái Lan, 7 ngày",
       "description": "Chúng tôi cùng nhau đi du lịch Thái Lan",
       "location": "Thái Lan",
       "witnesses": "",
@@ -2574,8 +2610,17 @@
         "day": 25,
         "format": "DD/MM/YYYY"
       },
+      "endDate": "30/05/2020",
+      "endDateParsed": {
+        "original": "30/05/2020",
+        "date": "2020-05-30T04:00:00.000Z",
+        "year": 2020,
+        "month": 5,
+        "day": 30,
+        "format": "DD/MM/YYYY"
+      },
       "type": "family-event",
-      "title": "Về quê thăm bà nội",
+      "title": "Về quê thăm bà nội, 6 ngày",
       "description": "Tôi và cô ấy về quê thăm bà nội của tôi",
       "location": "Núi Thành, Quảng Nam",
       "witnesses": "Bà nội của tôi",
@@ -3662,7 +3707,7 @@
         "format": "DD/MM/YYYY"
       },
       "type": "travel",
-      "title": "Đón tết 2023, đi du lịch Hội An",
+      "title": "Đón tết 2023, đi du lịch Hội An, 1 ngày",
       "description": "Chúng tôi đi du lịch Hội An cùng mẹ cô ấy, em gái, em rễ và cháu gái của cô ấy",
       "location": "TP. Hội An, Quảng Nam",
       "witnesses": "mẹ cô ấy, em gái, em rễ và cháu gái của cô ấy",
@@ -3940,57 +3985,73 @@
     },
     {
       "id": 1691204821000,
-      "date": "04/08/2023",
+      "date": "05/08/2023",
       "dateParsed": {
-        "original": "04/08/2023",
-        "date": "2023-08-04T23:07:01",
+        "original": "05/08/2023",
+        "date": "2023-08-05T04:00:00.000Z",
         "year": 2023,
         "month": 8,
-        "day": 4,
+        "day": 5,
         "format": "DD/MM/YYYY"
       },
-      "type": "other",
-      "title": "Sự kiện với vợ - 04/08/2023",
-      "description": "Võ Tuấn Nguyên đã thêm 6 ảnh mới. zìa quơ 😅",
+      "endDate": "08/08/2023",
+      "endDateParsed": {
+        "original": "08/08/2023",
+        "date": "2023-08-08T04:00:00.000Z",
+        "year": 2023,
+        "month": 8,
+        "day": 8,
+        "format": "DD/MM/YYYY"
+      },
+      "type": "family-event",
+      "title": "Về quê chơi, 4 ngày",
+      "description": "",
       "location": "",
       "witnesses": "",
-      "documents": "",
+      "documents": "Vé máy bay",
       "images": [
         {
           "id": 1691204821000,
           "name": "6368686893168189.jpg",
-          "path": "/images/2023-08-04-other/1764512297680-6368686893168189.jpg",
+          "path": "/images/2023-08-05-family-event/1764512297680-6368686893168189.jpg",
           "type": "image/jpeg"
         },
         {
           "id": 1691204821001,
           "name": "6368687029834842.jpg",
-          "path": "/images/2023-08-04-other/1764512297681-6368687029834842.jpg",
+          "path": "/images/2023-08-05-family-event/1764512297681-6368687029834842.jpg",
           "type": "image/jpeg"
         },
         {
           "id": 1691204821002,
           "name": "6368687103168168.jpg",
-          "path": "/images/2023-08-04-other/1764512297682-6368687103168168.jpg",
+          "path": "/images/2023-08-05-family-event/1764512297682-6368687103168168.jpg",
           "type": "image/jpeg"
         },
         {
           "id": 1691204821003,
           "name": "6368686996501512.jpg",
-          "path": "/images/2023-08-04-other/1764512297683-6368686996501512.jpg",
+          "path": "/images/2023-08-05-family-event/1764512297683-6368686996501512.jpg",
           "type": "image/jpeg"
         },
         {
           "id": 1691204821004,
           "name": "6368687133168165.jpg",
-          "path": "/images/2023-08-04-other/1764512297684-6368687133168165.jpg",
+          "path": "/images/2023-08-05-family-event/1764512297684-6368687133168165.jpg",
           "type": "image/jpeg"
         },
         {
           "id": 1691204821005,
           "name": "6368686899834855.jpg",
-          "path": "/images/2023-08-04-other/1764512297685-6368686899834855.jpg",
+          "path": "/images/2023-08-05-family-event/1764512297685-6368686899834855.jpg",
           "type": "image/jpeg"
+        },
+        {
+          "id": 1764654203258.9253,
+          "name": "screenshot_12_2_2025_12-40-52 AM.png",
+          "path": "/images/2023-08-05-family-event/1764654203258-screenshot_12_2_2025_12-40-52_AM.png",
+          "type": "image/png",
+          "size": 670827
         }
       ]
     },
@@ -4355,8 +4416,17 @@
         "day": 9,
         "format": "DD/MM/YYYY"
       },
+      "endDate": "11/09/2024",
+      "endDateParsed": {
+        "original": "11/09/2024",
+        "date": "2024-09-11T04:00:00.000Z",
+        "year": 2024,
+        "month": 9,
+        "day": 11,
+        "format": "DD/MM/YYYY"
+      },
       "type": "travel",
-      "title": "Du lịch Phan Thiết",
+      "title": "Du lịch Phan Thiết, 3 ngày",
       "description": "Cả gia đình cùng đi du lịch Phan Thiết",
       "location": "Phan Thiết",
       "witnesses": "",
@@ -4514,8 +4584,17 @@
         "day": 29,
         "format": "DD/MM/YYYY"
       },
+      "endDate": "31/03/2025",
+      "endDateParsed": {
+        "original": "31/03/2025",
+        "date": "2025-03-31T04:00:00.000Z",
+        "year": 2025,
+        "month": 3,
+        "day": 31,
+        "format": "DD/MM/YYYY"
+      },
       "type": "anniversary",
-      "title": "Đi chơi Vũng Tàu",
+      "title": "Đi chơi Vũng Tàu, 3 ngày",
       "description": "Đi chơi Vũng Tàu cùng mẹ cô ấy, em gái cô ấy và cháu gái cô ấy",
       "location": "",
       "witnesses": "Mẹ cô ấy, em gái cô ấy và cháu gái cô ấy",
@@ -4549,7 +4628,7 @@
         "format": "DD/MM/YYYY"
       },
       "type": "travel",
-      "title": "Du lịch núi Bà Đen",
+      "title": "Du lịch núi Bà Đen, 1 ngày",
       "description": "",
       "location": "Núi Bà Đèn, Tây Ninh",
       "witnesses": "Mẹ cô ấy, em gái cô ấy và cháu gái cô ấy",
@@ -4582,8 +4661,17 @@
         "day": 16,
         "format": "DD/MM/YYYY"
       },
+      "endDate": "17/08/2025",
+      "endDateParsed": {
+        "original": "17/08/2025",
+        "date": "2025-08-17T04:00:00.000Z",
+        "year": 2025,
+        "month": 8,
+        "day": 17,
+        "format": "DD/MM/YYYY"
+      },
       "type": "anniversary",
-      "title": "Du lịch Vũng Tàu",
+      "title": "Du lịch Vũng Tàu, 2 ngày",
       "description": "Tôi cùng cô ấy và 2 con đi du lịch Vũng Tàu",
       "location": "TP. Vũng Tàu",
       "witnesses": "",
@@ -5001,6 +5089,6 @@
       ]
     }
   ],
-  "lastSaved": "2025-12-02T03:13:12.803Z",
+  "lastSaved": "2025-12-02T05:46:10.232Z",
   "version": "1.0"
 }

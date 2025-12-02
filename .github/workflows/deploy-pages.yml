@@ -24,62 +24,76 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Copy public files to deployment directory
+      - name: Build and copy files
         run: |
-          # Tạo thư mục _site
-          mkdir -p _site
+          echo "=== Current directory ==="
+          pwd
+          echo "=== Listing files ==="
+          ls -la
           
-          # Kiểm tra file có tồn tại không
           echo "=== Checking public/ directory ==="
           ls -la public/ || echo "public/ directory not found"
           
+          # Tạo thư mục _site
+          mkdir -p _site
+          
           # Copy từng file một cách rõ ràng
+          echo "=== Copying files ==="
+          
           if [ -f "public/index.html" ]; then
             cp public/index.html _site/index.html
             echo "✓ Copied index.html"
           else
             echo "ERROR: public/index.html not found!"
+            find . -name "index.html" -type f
             exit 1
           fi
           
           if [ -f "public/script.js" ]; then
             cp public/script.js _site/script.js
             echo "✓ Copied script.js"
+          else
+            echo "WARNING: public/script.js not found!"
           fi
           
           if [ -f "public/styles.css" ]; then
             cp public/styles.css _site/styles.css
             echo "✓ Copied styles.css"
+          else
+            echo "WARNING: public/styles.css not found!"
           fi
           
           # Copy data folder nếu có
           if [ -d "public/data" ]; then
             mkdir -p _site/data
-            cp -r public/data/* _site/data/
+            cp -r public/data/* _site/data/ 2>/dev/null || true
             echo "✓ Copied data folder"
-          fi
-          
-          # Copy images folder nếu có (chỉ structure, không copy toàn bộ ảnh)
-          if [ -d "public/images" ]; then
-            mkdir -p _site/images
-            echo "✓ Created images directory"
+            ls -la _site/data/ | head -5
+          else
+            echo "WARNING: public/data directory not found!"
           fi
           
           # Verify files
-          echo "=== Files in _site ==="
+          echo "=== Final files in _site ==="
           ls -la _site/
-          echo "=== Verifying index.html ==="
+          echo "=== Verifying index.html content ==="
           if [ -f "_site/index.html" ]; then
-            head -5 _site/index.html
+            head -10 _site/index.html
             echo "✓ index.html exists and is valid"
           else
             echo "ERROR: index.html not found in _site!"
             exit 1
           fi
+          
+          # Verify file sizes
+          echo "=== File sizes ==="
+          du -h _site/*
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

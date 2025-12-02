@@ -683,9 +683,15 @@ async function loadFromDataJson() {
         } else {
             // Chạy qua web server (Next.js hoặc GitHub Pages)
             // Xác định base path từ URL hiện tại
-            const basePath = currentPath.replace(/\/index\.html$/, '').replace(/\/$/, '') || '';
-            // Dùng đường dẫn tương đối từ base path
-            dataPath = basePath ? `${basePath}/data/timeline.json` : './data/timeline.json';
+            // Ví dụ: /MyTimeline/ -> /MyTimeline, /MyTimeline/index.html -> /MyTimeline
+            let basePath = currentPath.replace(/\/index\.html$/, '').replace(/\/$/, '');
+            // Nếu basePath rỗng (root), dùng đường dẫn tương đối
+            // Nếu có basePath (subdirectory như /MyTimeline), dùng đường dẫn tuyệt đối từ base
+            if (basePath && basePath !== '/') {
+                dataPath = `${basePath}/data/timeline.json`;
+            } else {
+                dataPath = './data/timeline.json';
+            }
         }
         
         console.log('Đang load từ:', dataPath);

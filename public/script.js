@@ -676,18 +676,21 @@ async function loadFromDataJson() {
         const isInPublicFolder = currentPath.includes('/public/') || currentPath.endsWith('/index.html');
         
         let dataPath;
-        // Xác định đường dẫn dựa trên protocol
+        // Xác định đường dẫn phù hợp
         if (isFileProtocol) {
             // Mở trực tiếp từ file system - dùng đường dẫn tương đối
             dataPath = './data/timeline.json';
         } else {
             // Chạy qua web server (Next.js hoặc GitHub Pages)
-            // Dùng đường dẫn tương đối để hoạt động với cả local server và GitHub Pages
-            dataPath = './data/timeline.json';
+            // Xác định base path từ URL hiện tại
+            const basePath = currentPath.replace(/\/index\.html$/, '').replace(/\/$/, '') || '';
+            // Dùng đường dẫn tương đối từ base path
+            dataPath = basePath ? `${basePath}/data/timeline.json` : './data/timeline.json';
         }
         
         console.log('Đang load từ:', dataPath);
         console.log('Current pathname:', currentPath);
+        console.log('Base path:', currentPath.replace(/\/index\.html$/, '').replace(/\/$/, '') || '');
         
         const response = await fetch(dataPath);
         console.log('Response status:', response.status, response.statusText);

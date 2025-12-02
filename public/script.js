@@ -681,9 +681,9 @@ async function loadFromDataJson() {
             // Mở trực tiếp từ file system - dùng đường dẫn tương đối
             dataPath = './data/timeline.json';
         } else {
-            // Chạy qua web server (Next.js hoặc web server khác)
-            // Next.js serve file từ public/ với đường dẫn tuyệt đối bắt đầu từ /
-            dataPath = '/data/timeline.json';
+            // Chạy qua web server (Next.js hoặc GitHub Pages)
+            // Dùng đường dẫn tương đối để hoạt động với cả local server và GitHub Pages
+            dataPath = './data/timeline.json';
         }
         
         console.log('Đang load từ:', dataPath);
@@ -695,7 +695,7 @@ async function loadFromDataJson() {
         if (!response.ok) {
             console.error('Fetch failed:', response.status, response.statusText);
             // Thử đường dẫn khác
-            const altPath = isFileProtocol ? './data/timeline.json' : '/data/timeline.json';
+            const altPath = isFileProtocol ? './data/timeline.json' : './data/timeline.json';
             if (altPath !== dataPath) {
                 console.log('Thử đường dẫn khác:', altPath);
                 const altResponse = await fetch(altPath);

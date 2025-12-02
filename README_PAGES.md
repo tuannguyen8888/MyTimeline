@@ -15,6 +15,7 @@
 ## Truy cập
 
 Sau khi deploy thành công, trang sẽ có sẵn tại:
+
 - `https://tuannguyen8888.github.io/MyTimeline/`
 
 ## Lưu ý
@@ -22,4 +23,3 @@ Sau khi deploy thành công, trang sẽ có sẵn tại:
 - File `public/index.html` sẽ được serve tại root URL
 - File `public/data/timeline.json` sẽ có sẵn tại `/data/timeline.json`
 - File `public/images/` sẽ có sẵn tại `/images/`
-
